@@ -58,6 +58,8 @@ namespace PlatfromService
             {
                 endpoints.MapControllers();
             });
+
+            PrepDb.PrepPopulation(app);
         }
     }
 }
