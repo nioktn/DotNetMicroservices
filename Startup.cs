@@ -30,8 +30,13 @@ namespace PlatfromService
         {
             services.AddDbContext<AppDbContext>(opt =>
                             opt.UseInMemoryDatabase("InMem"));
+
             services.AddScoped<IPlatformRepository, PlatformRepository>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlatfromService", Version = "v1" });
